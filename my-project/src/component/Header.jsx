@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Navbar from './Navbar'
+import Topstrip from './topstrip/Topstrip'
 
 
 const Header = () => {
@@ -20,6 +22,8 @@ const Header = () => {
         </div>
       </div>
     </div>
+    <Navbar/>
+    <Topstrip/>
    </header>
   )
 }
