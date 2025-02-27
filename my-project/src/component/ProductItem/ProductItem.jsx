@@ -60,7 +60,7 @@ const ProductItem = (props) => {
                     <Rating name="size-small" defaultValue={4} readOnly />
                 </Stack>
 
-                <div className="flex items-center ml-3 gap-4">
+                <div className="flex items-center ml-3 mt-3 gap-4">
                     <span className="oldPrice line-through text-gray-500 text-[15px] font-[500]">
                         $58.00
                     </span>

@@ -13,7 +13,7 @@ import ProductsSlider from '../component/ProductSlider/ProductsSlider';
 const Home = () => {
     const [value, setValue] = React.useState(0);
 
-    const handleChange = (event, newValue) => {
+    const handleChange = ( newValue) => {
       setValue(newValue);
     };
   
@@ -58,8 +58,8 @@ const Home = () => {
 
 
 
-        <section className="py-16 bg-white">
-  <div className="m-10">
+        <section className="py-6 bg-white">
+  <div className="ml-10 mr-10">
     <div className="freeShipping w-full py-2 p-4 border border-[#ff5252] flex items-center justify-between rounded-md">
       <div className="col1 flex items-center justify-between gap-4">
         <LiaShippingFastSolid className="text-[50px]" />
@@ -76,6 +76,25 @@ const Home = () => {
 <AdsBannerSlider item={4}/>
 
   </div>
+</section>
+
+<section className='py-4 bg-white'>
+    <div className="m-5">
+        <h2 className='text-[20px] font-[600]'>Latest Products</h2>
+        <ProductsSlider items={6}/>
+    <AdsBannerSlider item={3}/>
+    </div>
+
+</section>
+
+<section className='py-4 bg-white'>
+    <div className="m-5">
+        <h2 className='text-[20px] font-[600]'>Feature Products</h2>
+        <ProductsSlider items={6}/>
+        <AdsBannerSlider item={3}/>
+
+    </div>
+
 </section>
 
         <br />

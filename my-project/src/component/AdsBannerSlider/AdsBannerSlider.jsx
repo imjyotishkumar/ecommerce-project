@@ -7,7 +7,7 @@ import BannerBox from "../BannerBox/BannerBox";
 
 const AdsBannerSlider = (props) => {
   return (
-    <div className="py-5 mt-10 w-full">
+    <div className=" mt-10 w-full">
       <Swiper
         slidesPerView={props.item}
         spaceBetween={10}
@@ -17,7 +17,7 @@ const AdsBannerSlider = (props) => {
       >
         
           <SwiperSlide>
-            <BannerBox img={`https://res.cloudinary.com/duqoh8gf5/image/upload/v1737030797/1737030796086_banner1.webp`}/>
+            <BannerBox img={`https://res.cloudinary.com/duqoh8gf5/image/upload/v1737030797/1737030796086_banner1.webp`} />
           </SwiperSlide>
           <SwiperSlide>
             <BannerBox img={`https://res.cloudinary.com/duqoh8gf5/image/upload/v1737030816/1737030811455_banner5.webp`}/>
