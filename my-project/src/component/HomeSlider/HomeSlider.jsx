@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import './styles.css';
-import { Navigation } from 'swiper/modules';
+import { Navigation,Autoplay } from 'swiper/modules';
 
 
 const HomeSlider = () => {
@@ -12,7 +12,11 @@ const HomeSlider = () => {
         <>
             <div className='homeSlider'>
                 <div className='container'>
-                    <Swiper  spaceBetween={10} navigation={true} modules={[Navigation]} className="mySwiper sliderHome">
+                    <Swiper
+                      autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}  spaceBetween={10} navigation={true} modules={[Navigation,Autoplay]} className="mySwiper sliderHome">
                         <SwiperSlide className='innerslider'>
                             <img src="https://res.cloudinary.com/duqoh8gf5/image/upload/v1740456371/1740456370502_New_Project_6.jpg" alt="" />
                         </SwiperSlide>
