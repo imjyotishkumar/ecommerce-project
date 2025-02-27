@@ -17,7 +17,25 @@ const ProductsSlider = (props) => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <ProductItem/>
+          <ProductItem img={`https://api.spicezgold.com/download/file_1734526483285_siril-poly-silk-grey-off-white-color-saree-with-blouse-piece-product-images-rvcpwdyagl-1-202304220521.webp`}/>
+        </SwiperSlide>
+        <SwiperSlide>
+          <ProductItem img={`https://api.spicezgold.com/download/file_1734526483285_siril-poly-silk-grey-off-white-color-saree-with-blouse-piece-product-images-rvcpwdyagl-1-202304220521.webp`}  />
+        </SwiperSlide>
+        <SwiperSlide>
+          <ProductItem img={`https://api.spicezgold.com/download/file_1734526483285_siril-poly-silk-grey-off-white-color-saree-with-blouse-piece-product-images-rvcpwdyagl-1-202304220521.webp`}/>
+        </SwiperSlide>
+        <SwiperSlide>
+          <ProductItem img={`https://api.spicezgold.com/download/file_1734526483285_siril-poly-silk-grey-off-white-color-saree-with-blouse-piece-product-images-rvcpwdyagl-1-202304220521.webp`}/>
+        </SwiperSlide>
+        <SwiperSlide>
+          <ProductItem img={`https://api.spicezgold.com/download/file_1734526483285_siril-poly-silk-grey-off-white-color-saree-with-blouse-piece-product-images-rvcpwdyagl-1-202304220521.webp`}/>
+        </SwiperSlide>
+        <SwiperSlide>
+          <ProductItem img={`https://api.spicezgold.com/download/file_1734526483285_siril-poly-silk-grey-off-white-color-saree-with-blouse-piece-product-images-rvcpwdyagl-1-202304220521.webp`}/>
+        </SwiperSlide>
+        <SwiperSlide>
+          <ProductItem img={`https://api.spicezgold.com/download/file_1734526483285_siril-poly-silk-grey-off-white-color-saree-with-blouse-piece-product-images-rvcpwdyagl-1-202304220521.webp`}/>
         </SwiperSlide>
       </Swiper>
     </div>

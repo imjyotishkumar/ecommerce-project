@@ -23,7 +23,7 @@ const Home = () => {
         <HomeCatSlider/>
 
   <section className="bg-white mt-8 py-8">
-  <div className="container">
+  <div className="m-5">
     <div className="flex items-center justify-between">
       <div className="leftSec">
         <h2 className="text-xl font-semibold">Popular Products</h2>
@@ -52,7 +52,7 @@ const Home = () => {
 
       </div>
     </div>
-    <ProductsSlider items={5}/>
+    <ProductsSlider items={6}/>
   </div>
 </section>
 
