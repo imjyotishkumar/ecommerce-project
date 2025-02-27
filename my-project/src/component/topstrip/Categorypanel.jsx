@@ -2,131 +2,166 @@ import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import { RxCross1 } from "react-icons/rx";
-import { Link } from "react-router-dom";
-import { CiSquarePlus, CiSquareMinus } from "react-icons/ci";
+import { FaRegSquarePlus } from "react-icons/fa6";
+import { FiMinusSquare } from "react-icons/fi";
 import { Button } from "@mui/material";
-
+import { Link } from "react-router-dom";
 import "../style.css";
 import "./style.css";
 
 const Categorypanel = (props) => {
+
+  const [submeunIndex, setsubmenuIndex] = useState(null);
+  const [innersubmeunIndex, setinnersubmenuIndex] = useState(null);
+
   const toggleDrawer = (newOpen) => () => {
     props.setisopenCatpan(newOpen);
   };
 
-  // State to track which category is open
-  const [openCategories, setOpenCategories] = useState({});
-  const [openSubCategories, setOpenSubCategories] = useState({});
+  const opensubmenu = (index) => {
+    if (submeunIndex == index) {
+      setsubmenuIndex(null)
+    } else {
+      setsubmenuIndex(index)
+    }
+  }
 
-  const toggleCategory = (category) => {
-    setOpenCategories((prev) => ({
-      ...prev,
-      [category]: !prev[category],
-    }));
-  };
+  const openinnersubmenu = (index) => {
+    if (innersubmeunIndex === index) {
+      setinnersubmenuIndex(null)
+    } else {
+      setinnersubmenuIndex(index)
+    }
+  }
 
-  const toggleSubCategory = (subcategory) => {
-    setOpenSubCategories((prev) => ({
-      ...prev,
-      [subcategory]: !prev[subcategory],
-    }));
-  };
-
-  const categories = [
-    {
-      name: "Fashion",
-      subcategories: [
-        {
-          name: "Men",
-          items: [
-            { name: "T-shirt", link: "/tshirt" },
-            { name: "Jeans", link: "/jeans" },
-          ],
-        },
-      ],
-    },
-    {
-      name: "Electronics",
-      subcategories: [
-        {
-          name: "Mobile",
-          items: [
-            { name: "iPhone", link: "/iphone" },
-            { name: "Samsung", link: "/samsung" },
-          ],
-        },
-      ],
-    },
-  ];
 
   const DrawerList = (
-    <Box sx={{ width: 250 }} role="presentation">
+    <Box sx={{ width: 250 }} role="presentation" className="categoryPanel">
       <div className="p-3">
         <div className="flex justify-between">
           <h3 className="font-semibold">Shop by Categories</h3>
           <Button onClick={toggleDrawer(false)}>
-            <RxCross1 className="text-black" />
+            <RxCross1 className="text-black cursor-pointer" />
           </Button>
         </div>
-
-        <div className="mt-5">
+        <div className="scroll">
           <ul className="w-full">
-            {categories.map((category, index) => (
-              <li key={index} className="font-semibold catgorylist">
-                <div
-                  className="flex justify-between items-center cursor-pointer"
-                  onClick={() => toggleCategory(category.name)}
-                >
-                  {category.name}
-                  {openCategories[category.name] ? (
-                    <CiSquareMinus />
-                  ) : (
-                    <CiSquarePlus />
-                  )}
-                </div>
+            <li className="list-none flex items-center relative flex-col">
+              <Link to={`/`} className="w-full">
+                <Button className="w-full !text-left cursor-pointer !justify-start !px-3 !text-[rgba(0,0,0,0.8)]"> Fashion </Button>
+              </Link>
+              {
+                submeunIndex === 0 ? (
+                  <FiMinusSquare className="absolute cursor-pointer top-[10px] right-[15px]" onClick={() => opensubmenu(0)} />
+                ) :
+                  (
+                    <FaRegSquarePlus className="absolute cursor-pointer top-[10px] right-[15px]" onClick={() => opensubmenu(0)} />
+                  )
+              }
 
-                <ul
-                  className={`${
-                    openCategories[category.name] ? "" : "hidden"
-                  } mt-2 ml-4`}
-                >
-                  {category.subcategories.map((sub, subIndex) => (
-                    <li key={subIndex} className="text-[15px] catgorylist">
-                      <div
-                        className="flex justify-between items-center cursor-pointer"
-                        onClick={() => toggleSubCategory(sub.name)}
-                      >
-                        {sub.name}
-                        {openSubCategories[sub.name] ? (
-                          <CiSquareMinus />
-                        ) : (
-                          <CiSquarePlus />
-                        )}
-                      </div>
+              {
+                submeunIndex === 0 &&
+                <ul className="submenu w-full pl-3">
+                  <li className="list-none relative">
+                    <Link to={`/`} className="w-full">
+                      <Button className="w-full !text-left cursor-pointer !justify-start !px-3 !text-[rgba(0,0,0,0.8)]"> Apparel </Button>
+                    </Link>
+                    {
+                      innersubmeunIndex === 0 ? (
+                        <FiMinusSquare className="absolute cursor-pointer top-[10px] right-[15px]" onClick={() => openinnersubmenu(0)} />
 
-                      <ul
-                        className={`${
-                          openSubCategories[sub.name] ? "" : "hidden"
-                        } ml-4`}
-                      >
-                        {sub.items.map((item, itemIndex) => (
-                          <li key={itemIndex} className="ml-4">
-                            <Link
-                              to={item.link}
-                              className="text-[14px] font-[400] link"
-                            >
-                              {item.name}
-                            </Link>
-                          </li>
-                        ))}
+                      ) : (
+                        <FaRegSquarePlus className="absolute cursor-pointer top-[10px] right-[15px]" onClick={() => openinnersubmenu(0)} />
+
+                      )
+
+                    }
+
+                    {
+                      innersubmeunIndex === 0 && <ul className=" inner_submenu w-full pl-3">
+                        <li className="list-none relative mb-2">
+                          <Link to={`/`} className="link w-full !text-left cursor-pointer !justify-start !px-3 transition text-[14px]"> Apparel </Link>
+                        </li>
+                        <li className="list-none relative mb-2">
+                          <Link to={`/`} className="link w-full !text-left cursor-pointer !justify-start !px-3 transition text-[14px]"> Apparel </Link>
+                        </li>
+                        <li className="list-none relative mb-2">
+                          <Link to={`/`} className="link w-full !text-left cursor-pointer !justify-start !px-3 transition text-[14px]"> Apparel </Link>
+                        </li>
+                        <li className="list-none relative mb-2">
+                          <Link to={`/`} className="link w-full !text-left cursor-pointer !justify-start !px-3 transition text-[14px]"> Apparel </Link>
+                        </li>
                       </ul>
-                    </li>
-                  ))}
+                    }
+
+                  </li>
                 </ul>
-              </li>
-            ))}
+              }
+            </li>
+
+            <li className="list-none flex items-center relative flex-col">
+              <Link to={`/`} className="w-full">
+                <Button className="w-full !text-left cursor-pointer !justify-start !px-3 !text-[rgba(0,0,0,0.8)]"> Fashion </Button>
+              </Link>
+              {
+                submeunIndex === 1 ? (
+                  <FiMinusSquare className="absolute cursor-pointer top-[10px] right-[15px]" onClick={() => opensubmenu(1)} />
+                ) :
+                  (
+                    <FaRegSquarePlus className="absolute cursor-pointer top-[10px] right-[15px]" onClick={() => opensubmenu(1)} />
+                  )
+              }
+
+              {
+                submeunIndex === 1 &&
+                <ul className="submenu w-full pl-3">
+                  <li className="list-none relative">
+                    <Link to={`/`} className="w-full">
+                      <Button className="w-full !text-left cursor-pointer !justify-start !px-3 !text-[rgba(0,0,0,0.8)]"> Apparel </Button>
+                    </Link>
+                    {
+                      innersubmeunIndex === 1 ? (
+                        <FiMinusSquare className="absolute cursor-pointer top-[10px] right-[15px]" onClick={() => openinnersubmenu(1)} />
+
+                      ) : (
+                        <FaRegSquarePlus className="absolute cursor-pointer top-[10px] right-[15px]" onClick={() => openinnersubmenu(1)} />
+
+                      )
+
+                    }
+
+                    {
+                      innersubmeunIndex === 1 && <ul className=" inner_submenu w-full pl-3">
+                        <li className="list-none relative mb-2">
+                          <Link to={`/`} className="link w-full !text-left cursor-pointer !justify-start !px-3 transition text-[14px]"> Apparel </Link>
+                        </li>
+                        <li className="list-none relative mb-2">
+                          <Link to={`/`} className="link w-full !text-left cursor-pointer !justify-start !px-3 transition text-[14px]"> Apparel </Link>
+                        </li>
+                        <li className="list-none relative mb-2">
+                          <Link to={`/`} className="link w-full !text-left cursor-pointer !justify-start !px-3 transition text-[14px]"> Apparel </Link>
+                        </li>
+                        <li className="list-none relative mb-2">
+                          <Link to={`/`} className="link w-full !text-left cursor-pointer !justify-start !px-3 transition text-[14px]"> Apparel </Link>
+                        </li>
+                      </ul>
+                    }
+
+
+
+                  </li>
+                </ul>
+
+
+              }
+
+
+
+            </li>
+
           </ul>
         </div>
+
       </div>
     </Box>
   );
