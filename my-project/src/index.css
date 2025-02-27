@@ -5,6 +5,7 @@
 body{
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
+    overflow-x: hidden;
 }
 .container{
     width: 90%;
@@ -18,3 +19,7 @@ header .top-strip{
     
 }
 
+.sliderHome{
+    overflow: inherit !important;
+    
+}
