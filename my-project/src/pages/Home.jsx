@@ -4,10 +4,18 @@ import HomeCatSlider from '../component/HomeCatSlider/HomeCatSlider'
 import { LiaShippingFastSolid } from "react-icons/lia";
 import AdsBannerSlider from '../component/AdsBannerSlider/AdsBannerSlider';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { Navigation } from 'swiper/modules';
+import { Link } from 'react-router-dom';
+
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import ProductsSlider from '../component/ProductSlider/ProductsSlider';
+import BlogItem from '../component/BlogItem/BlogItem';
+import Footer from '../component/Footer/Footer';
 
 
 const Home = () => {
@@ -96,6 +104,40 @@ const Home = () => {
     </div>
 
 </section>
+
+<section className='py-4 bg-white bolgSection'>
+<h2 className='text-[20px] m-5  font-[600]'>From the Blog</h2>
+
+  <div className=' m-5'>
+  <Swiper
+                    slidesPerView={4}
+                    spaceBetween={30}
+                    navigation={true}
+                    modules={[Navigation]}
+                    className="blogSlider w-[100%]"
+                >
+                <SwiperSlide>
+             <BlogItem/>
+                </SwiperSlide>
+                <SwiperSlide>
+             <BlogItem/>
+                </SwiperSlide>
+                <SwiperSlide>
+             <BlogItem/>
+                </SwiperSlide>
+                <SwiperSlide>
+             <BlogItem/>
+                </SwiperSlide>
+                <SwiperSlide>
+             <BlogItem/>
+                </SwiperSlide>
+                </Swiper>
+
+  </div>
+
+</section>
+
+<Footer/>
 
         <br />
         <br />
