@@ -83,3 +83,12 @@ header .top-strip{
   .productsSlider .swiper-wrapper{padding: 15px;margin-left: -15px; margin-right: -15px;}
 
   .btn-org{background-color: #ff5252 !important; color: #fff !important; padding: 2px; font: 500; font-size: 16px;}
+  .HomeSliderV2 .swiper-wrapper{background: #ff5252 !important;}
+  .swiper-pagination-bullet{background: #ff5252;}
+
+  .HomeSliderV2 .swiper-slide-active .info{right: 0px !important ; opacity: 1;}
+  .HomeSliderV2 .swiper-slide-active .info h4{right: 0px !important ; opacity: 1; transition-duration: 1s;}
+  .HomeSliderV2 .swiper-slide-active .info h2{right: 0px !important ; opacity: 1; transition-duration: 1.4s;}
+  .HomeSliderV2 .swiper-slide-active .info h3{right: 0px !important ; opacity: 1; transition-duration: 1.8s;}
+
+

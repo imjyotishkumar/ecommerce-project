@@ -1,5 +1,7 @@
 import React from 'react'
 import HomeSlider from '../component/HomeSlider/HomeSlider'
+import HomeSliderV2 from '../component/HomeSliderV2/HomeSliderV2'
+import BannerBoxV2 from '../component/BannerBoxV2/BannerBoxV2'
 import HomeCatSlider from '../component/HomeCatSlider/HomeCatSlider'
 import { LiaShippingFastSolid } from "react-icons/lia";
 import AdsBannerSlider from '../component/AdsBannerSlider/AdsBannerSlider';
@@ -27,7 +29,24 @@ const Home = () => {
   
   return (
     <div>
-        <HomeSlider/>
+       <HomeSlider/>
+
+         <section className="">
+         
+          <div className=" flex items-center ml-8 -mb-16 mt-12 gap-5">
+          <div className='part1 h-[38vw] w-[60%] '>
+            <HomeSliderV2/>
+          </div>
+          <div className="part2 flex flex-col gap-5 h-[38vw] ">
+            <BannerBoxV2 info="left" img="https://res.cloudinary.com/duqoh8gf5/image/upload/v1737020760/1737020756772_New_Project_1.png"/>
+            <BannerBoxV2 info="right" img="https://res.cloudinary.com/duqoh8gf5/image/upload/v1737020917/1737020916820_New_Project_52.jpg"/>
+
+          </div>
+          </div>
+          
+      
+         </section>
+
         <HomeCatSlider/>
 
   <section className="bg-white mt-8 py-8">
