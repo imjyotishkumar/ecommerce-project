@@ -1,0 +1,8 @@
+.imgWrapper img{
+    object-fit: fill;
+    height: min-content;
+}
+
+.productItem .actions button:hover svg{color: #fff !important;}
+.productItem .actions button svg{pointer-events: none !important;}
+

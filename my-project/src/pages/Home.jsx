@@ -17,7 +17,6 @@ import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import ProductsSlider from '../component/ProductSlider/ProductsSlider';
 import BlogItem from '../component/BlogItem/BlogItem';
-import Footer from '../component/Footer/Footer';
 
 
 const Home = () => {
@@ -156,7 +155,7 @@ const Home = () => {
 
 </section>
 
-<Footer/>
+
 
         <br />
         <br />

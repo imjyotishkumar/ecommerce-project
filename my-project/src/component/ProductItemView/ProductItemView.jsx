@@ -7,14 +7,16 @@ import { Button } from "@mui/material";
 import { MdZoomOutMap } from "react-icons/md";
 import { IoGitCompareOutline } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa6";
+import { FaCartPlus } from "react-icons/fa6";
 
 
 
 
-const ProductItem = (props) => {
+
+const ProductItemView = (props) => {
     return (
-        <div className="productItem shadow-lg   rounded-md overflow-hidden border border-2 ">
-            <div className="group imgWrapper w-[100%] rounded-md relative">
+        <div className="productItem shadow-lg flex gap-5   rounded-md overflow-hidden border border-2 ">
+            <div className="group imgWrapper  w-[30%] rounded-md relative">
                 <Link to={`/`}>
                 <div className="img h-[150px] overflow-hidden ">
                 <img
@@ -52,7 +54,7 @@ const ProductItem = (props) => {
                     <Link to="/" className="link transition-all">Soylent Green</Link>
                 </h6>
                 <Link to="/" className="link mt-2">
-                    <h3 className="text-[14px] transition-all hover:text-red-500 title mt-1 font-[500] text-[rgba(0,0,0,0.9)]">
+                    <h3 className="text-[20px] transition-all hover:text-red-500 title mt-1 font-[500] text-[rgba(0,0,0,0.9)]">
                         Siril Georgette Pink Color Saree with Blouse piece
                     </h3>
                 </Link>
@@ -67,11 +69,16 @@ const ProductItem = (props) => {
                     <span className="price text-primary text-[15px] font-[600]">
                         $58.00
                     </span>
+                   
                 </div>
+                <div className="ml-4 flex items-center gap-2 bg-[#ff5252] p-1 w-fit text-white font-bold mb-2 cursor-pointer mt-2 rounded-lg">
+                <FaCartPlus />
+                Add to cart 
+                    </div>
 
             </div>
         </div>
     );
 };
 
-export default ProductItem;
+export default ProductItemView;
