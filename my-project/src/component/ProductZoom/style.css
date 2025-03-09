@@ -1,0 +1,15 @@
+.swiper-button-next:hover{
+background: #ff5252;
+
+} 
+ .swiper-button-prev:hover{
+background: #ff5252;
+
+}
+
+.swiper-button-next:hover:after{
+color: white;
+}
+.swiper-button-prev:hover:after{
+    color: white;
+    }

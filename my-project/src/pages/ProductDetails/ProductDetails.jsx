@@ -23,7 +23,7 @@ const ProductDetails = () => {
                     </Breadcrumbs>
                 </div>
                 <div className='container flex gap-4 '>
-                    <div className='ProductZoomContainer'>
+                    <div className='ProductZoomContainer overflow-hidden w-[30%]'>
                         <ProductZoom />
                     </div>
 
