@@ -33,7 +33,7 @@ const Navbar = () => {
         <div>
             <ul className='flex items-center gap-5 '>
                 <li className=''>
-                <Link to={'login'} className='hover:text-red-500'>Login</Link> | 
+                <Link to={'/productlisting'} className='hover:text-red-500'>Login</Link> | 
                 <Link to={'register'} className='hover:text-red-500'> Register</Link>
                 </li>
                 <li>

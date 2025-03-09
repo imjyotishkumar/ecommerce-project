@@ -11,10 +11,6 @@ import MenuItem from '@mui/material/MenuItem';
 import ProductItemView from '../../component/ProductItemView/ProductItemView';
 import Pagination from '@mui/material/Pagination';
 
-
-
-
-
 const ProductListing = () => {
 
   const [itemview, setitemview] = useState('grid')
@@ -102,7 +98,6 @@ const ProductListing = () => {
               </div>
 
             </div>
-
             <div className={`grid ${itemview === 'grid' ? 'grid-cols-4 md:grid-cols-4' : 'grid-cols-1 md:grid-cols-1'}  gap-4`}>
               {
                 itemview === 'grid' ? <>
